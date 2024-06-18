@@ -6,10 +6,3 @@ def get_emb_func():
         model = "snowflake-arctic-embed"
     )
     return ollama_emb
-
-# r1 = ollama_emb.embed_documents(
-#     [
-#         "Alpha is the first letter of Greek alphabet",
-#         "Beta is the second letter of Greek alphabet",
-#     ]
-# )
