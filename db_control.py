@@ -24,8 +24,8 @@ def main():
     else:
         documents = load_pdf_docs()
         chunks = split_docs(documents)
-        # add_to_chroma(chunks)
-        add_to_faiss(chunks)
+        add_to_chroma(chunks)
+        # add_to_faiss(chunks)
 
 
 def add_to_faiss(chunks:list[Document]):
@@ -35,7 +35,7 @@ def add_to_faiss(chunks:list[Document]):
     query = "How to get out of jail in monopoly?"
     docs = db.similarity_search(query, k=5)
     print(docs)
-    
+
 
 
 def add_to_chroma(chunks:list[Document]):
