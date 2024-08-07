@@ -54,9 +54,9 @@ def query_rag(query_text: str):
     # print(context_text)
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
     prompt = prompt_template.format(context=context_text, question=query_text)
-    print('\nprompt:\n',prompt)
+    # print('\nprompt:\n',prompt)
 
-    model = Ollama(model="llama3")
+    model = Ollama(model="llama3.1:8b")
     response_text = model.invoke(prompt)
 
     sources = [doc.metadata.get("id", None) for doc, _score in results]
